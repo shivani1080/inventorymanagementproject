@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+
+
+
 # Create your models here.
 class profile(models.Model):
     staff=models.OneToOneField(User,on_delete=models.CASCADE,null=True)
@@ -8,3 +11,6 @@ class profile(models.Model):
     image=models.ImageField(default='avatar.png',upload_to='profile_images')
     def __str__(self) -> str:
         return f'{self.staff.username}-profile'
+    
+    
+

@@ -74,6 +74,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <a class="btn btn-primary btn-sm" href="{% url 'generate_excel_file' %}">Excel sheet</a>
+                    <a class="btn btn-success btn-sm" href="{% url 'generate_pdf' %}">PDF</a>
                     {% for item in items %}
                     <tr>
                         <td>{{ item.asset }}</td>
@@ -82,7 +84,8 @@
                         <td>{{ item.category }}</td>
                         <td>{{ item.quantity }}</td>
                         <td>{{ item.model }}</td>
-                        <td><img class="img-thumbnail" src="{{ item.barcode.url }}" alt=""></td>
+                        <td><a href="{{ item.barcode.url }}" download><img class="img-thumbnail" src="{{ item.barcode.url }}" alt=""></a></td>
+
                         <td>{{ item.price }}</td>
                         <td>
                             <a class="btn btn-info btn-sm" href="{% url 'dashboard-product-update' item.id %}">Edit</a>

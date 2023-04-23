@@ -4,6 +4,8 @@ import barcode
 from barcode.writer import ImageWriter
 from io import BytesIO
 from django.core.files import File
+
+
 # Create your models here.
 category=(
     ('stationary','stationary'),
@@ -48,4 +50,7 @@ class Issued_Items(models.Model):
 
     def __str__(self) -> str:
         return f'{self.product} issued to {self.staff}'
+
+
+
 
